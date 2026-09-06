@@ -363,12 +363,6 @@ Contributions, issues, and feature requests are welcome!
 
 ---
 
-## 📄 License
-
-Distributed under the MIT License.
-
----
-
 ## 👤 Author
 
 **cabacy** — [@cabacy](https://github.com/cabacy)
