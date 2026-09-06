@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scired"
+version = "0.1.0"
+description = "Turn YouTube videos into personalized language learning material"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "cabacy"},
+]
+keywords = ["language-learning", "anki", "cefr", "youtube", "vocabulary"]
+
+dependencies = [
+    "youtube-transcript-api>=0.6.2",
+    "yt-dlp>=2024.3.10",
+    "faster-whisper>=1.0.0",
+    "wordfreq>=3.0.3",
+    "nltk>=3.8.1",
+    "pydantic>=2.5",
+    "pydantic-settings>=2.1",
+    "requests>=2.31",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "responses>=0.24",
+    "ruff>=0.4",
+]
+
+[project.scripts]
+scired = "scired.main:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py310"
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --tb=short"
