@@ -332,51 +332,6 @@ SCIRED_ANKI_DECK_NAME=Scired::Vocabulary
 
 ---
 
-## 🏗️ Project Structure
-
-```
-Scired/
-├── pyproject.toml              # Project metadata & dependencies
-├── .env.example                # Configuration template
-├── README.md
-│
-├── src/
-│   └── scired/
-│       ├── __init__.py
-│       ├── config.py           # Settings (pydantic-settings)
-│       ├── exceptions.py       # Custom exceptions
-│       ├── logging_conf.py     # Logging setup
-│       ├── main.py             # CLI entry point
-│       │
-│       ├── sources/            # Video sources
-│       │   └── youtube.py      # YouTube handler
-│       │
-│       ├── transcription/      # Speech → Text
-│       │   ├── youtube_subs.py # YouTube subtitles (fast)
-│       │   └── whisper.py      # Whisper fallback (local)
-│       │
-│       ├── analysis/           # CEFR classification
-│       │   ├── tokenizer.py    # Text → tokens
-│       │   ├── frequency.py    # Word frequency lookup
-│       │   ├── cefr.py         # Level classifier
-│       │   └── extractor.py    # Difficult word extraction
-│       │
-│       ├── models/             # Data models
-│       │   ├── content.py      # ContentItem (Pydantic)
-│       │   └── vocabulary.py   # VocabEntry
-│       │
-│       ├── anki/               # Anki integration
-│       │   ├── client.py       # AnkiConnect HTTP client
-│       │   └── deck.py         # Flashcard creation
-│       │
-│       └── storage/            # Persistence
-│           └── repository.py   # SQLite CRUD
-│
-├── tests/
-└── data/
-```
-
----
 
 ## 🛠️ Tech Stack
 
